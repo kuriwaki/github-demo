@@ -1,0 +1,168 @@
+\mode<presentation>
+  % \useoutertheme{smoothbars}
+\usecolortheme{dove}
+
+% https://tex.stackexchange.com/a/83485/153676
+\errorcontextlines 10000
+
+
+% Packages ===============================================
+\usepackage{lmodern}
+\usepackage{pgf}
+\usepackage{amsmath,amssymb,dsfont}
+\usepackage{adjustbox}
+\usepackage{graphicx} 
+\usepackage{subcaption}
+\usepackage{booktabs} % table lines
+\usepackage[most]{tcolorbox} % slick boxes
+\usepackage{CJKutf8}
+\usepackage{hyperref}
+\usepackage{verbatim}
+\usepackage{setspace}
+
+
+% 2018 collision
+% https://tex.stackexchange.com/questions/426088/texlive-pretest-2018-beamer-and-subfig-collide
+\makeatletter
+\let\@@magyar@captionfix\relax
+\makeatother
+
+% Lists
+\newenvironment{wideitemize}{\itemize\addtolength{\itemsep}{10pt}}{\enditemize}
+
+% Other Package
+\usepackage{changepage} % adjustwidth
+\usepackage{multirow, bigdelim} % https://tex.stackexchange.com/a/15364/153676
+
+
+% Paul GP Font
+\usepackage{pgfpages}
+\usepackage{helvet}
+\usepackage[default]{lato}
+
+% FW
+\usepackage{inconsolata}
+
+
+% Colors ===============================================
+\usepackage{xcolor}
+\definecolor{mygray}{gray}{0.5} % define color on gray scale
+\definecolor{lgray}{gray}{0.9} % define color on gray scale
+\definecolor{light-gray}{gray}{0.89}  
+\definecolor{crimson}{RGB}{204,0,0}
+\definecolor{light-blue}{RGB}{135,206,250}
+\definecolor{light-green}{RGB}{77, 172, 38}
+\definecolor{orange}{RGB}{255,165,0}
+\definecolor{salmon}{RGB}{250, 128, 114}
+\definecolor{blue}{RGB}{0,114,178}
+% \definecolor{red}{RGB}{213,94,0} % old paul gp
+\definecolor{red}{RGB}{191,35,0}
+\definecolor{magenta}{RGB}{208, 28, 139}
+\definecolor{yellow}{RGB}{240,228,66}
+\definecolor{green}{RGB}{0,158,115}
+
+\hypersetup{
+  colorlinks=false,
+  linkbordercolor = {white},
+  linkcolor = {blue}
+}
+
+% Math
+\newcommand{\y}{\textsc{y}}
+\newcommand{\x}{\textsc{x}}
+\newcommand{\z}{\textsc{Z}}
+\newcommand{\A}{\textsc{A}}
+        
+        
+% Graphics ===============================================
+
+% Header Format ===============
+\definecolor{greyone}{RGB}{75,75,75}
+% \setbeamercolor{palette quaternary}{fg=white,bg=greyone}
+% \setbeamercolor{titlelike}{parent=palette quaternary}
+
+\setbeamertemplate{frametitle}
+{
+        \nointerlineskip
+        \begin{beamercolorbox}[sep=0.3cm,wd=\paperwidth]{frametitle}
+        \vbox{}\vskip-1ex%
+        \strut\insertframetitle\strut
+        \vskip-0.5ex%
+        \end{beamercolorbox}
+}
+\setbeamerfont{frametitle}{series=\bfseries, size=\Large}
+\setbeamerfont{body}{size=\small}
+
+\setbeamertemplate{footline}[frame number] % don't count pauses
+\setbeamertemplate{navigation symbols}{} % no symbols
+
+
+
+
+%%% TIKZ
+\usepackage{tikz}
+\usepackage{venndiagram}
+\usetikzlibrary{matrix,shapes,arrows,fit,tikzmark}
+
+% Figures with encircling letters
+\newcommand\encircle[1]{%
+  \tikz[baseline=(X.base)] 
+    \node (X) [draw, shape=circle, inner sep=0] {\strut \textit{#1}};}
+
+
+% https://github.com/paulgp/beamer-tips/blob/master/slides.pdf
+\tikzset{   
+  every picture/.style={remember picture,baseline},
+  every node/.style={anchor=base,align=center,outer sep=1.5pt},
+}
+\newcommand\marktopleft[1]{%
+  \tikz[overlay,remember picture] 
+  \node (marker-#1-a) at (-.3em,.3em) {};%
+}
+\newcommand\markbottomright[2]{%
+  \tikz[overlay,remember picture] 
+  \node (marker-#1-b) at (0em,0em) {};%
+}
+\tikzstyle{every picture}+=[remember picture] 
+\tikzstyle{mybox} =[draw=black, very thick, rectangle, inner sep=10pt, inner ysep=20pt]
+\tikzstyle{fancytitle} =[draw=black,fill=red, text=white]
+
+%%%% END TIKZ STUFF
+
+% tables
+\usepackage{tabularx}
+\usepackage{colortbl}
+\usepackage{dcolumn}
+\newcolumntype{d}[0]{D{.}{.}{5}}
+
+% Tabular X special row types
+\newcolumntype{R}{>{\raggedleft\arraybackslash}X} 
+\newcolumntype{C}{>{\centering\arraybackslash}X}
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}
+\newcolumntype{G}{>{\columncolor{lgray}}C}
+
+\newcolumntype{s}{>{\hsize=0.5\hsize}L}
+
+\usepackage{adjustbox}
+\usepackage{array}
+
+\newcolumntype{A}[2]{%
+    >{\adjustbox{angle=#1,lap=\width-(#2)}\bgroup}%
+    l%
+    <{\egroup}%
+}
+\newcommand*\rot{\multicolumn{1}{A{45}{1em}}}% no optional argument here, please!
+
+
+
+% tcolorbox cells
+\tcbset{nobeforeafter,size=small}
+\tcbset{tcbox raise base}
+
+\newcommand\bfheading[1]{%
+  \par\bigskip
+  {\bfseries#1}\par\medskip}
+    
+\newcommand\itheading[1]{%
+  \par\bigskip
+  {\itshape#1}\par\medskip}
