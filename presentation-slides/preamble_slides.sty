@@ -29,6 +29,7 @@
 
 % Lists
 \newenvironment{wideitemize}{\itemize\addtolength{\itemsep}{10pt}}{\enditemize}
+\newenvironment{wideenumerate}{\enumerate\addtolength{\itemsep}{10pt}}{\endenumerate}
 
 % Other Package
 \usepackage{changepage} % adjustwidth
@@ -49,7 +50,7 @@
 \definecolor{mygray}{gray}{0.5} % define color on gray scale
 \definecolor{lgray}{gray}{0.9} % define color on gray scale
 \definecolor{light-gray}{gray}{0.89}  
-\definecolor{crimson}{RGB}{204,0,0}
+\definecolor{crimson}{RGB}{156,0,0}
 \definecolor{light-blue}{RGB}{135,206,250}
 \definecolor{light-green}{RGB}{77, 172, 38}
 \definecolor{orange}{RGB}{255,165,0}
@@ -62,7 +63,9 @@
 \definecolor{green}{RGB}{0,158,115}
 
 \hypersetup{
-  colorlinks=false,
+  colorlinks = true,
+  citecolor = crimson, 
+  urlcolor = crimson,
   linkbordercolor = {white},
   linkcolor = {blue}
 }
@@ -166,3 +169,10 @@
 \newcommand\itheading[1]{%
   \par\bigskip
   {\itshape#1}\par\medskip}
+
+
+% footnotes
+
+\usepackage[hang, bottom]{footmisc} 
+\setlength{\footnotesep}{\baselineskip}
+\setlength{\footnotemargin}{0.6em} % separation between number and text
