@@ -181,3 +181,16 @@
 \usepackage{xcolor}
 \definecolor{light-gray}{gray}{0.95}
 \newcommand{\code}[1]{\colorbox{light-gray}{\texttt{#1}}}
+
+
+% Section frametitle
+\AtBeginSection[]{
+  \begin{frame}
+  \vfill
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center,shadow=false,rounded=true]{title}
+    \usebeamerfont{title}{\Large\textbf{\insertsectionhead}}\par%
+  \end{beamercolorbox}
+  \vfill
+  \end{frame}
+}

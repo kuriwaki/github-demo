@@ -3,7 +3,7 @@
 \usepackage{preamble_slides}
 
 
-\title{\textbf{\Large{Introduction to git for social science students}}}
+\title{\textbf{\Large{Git for Students in the Social Sciences}}}
 \providecommand{\subtitle}[1]{}
 \subtitle{(not software developers)}
 \author{Shiro Kuriwaki}
@@ -11,15 +11,17 @@
 
 \begin{document}
 
-\begin{frame}{Setup}
+\begin{frame}{Setup Today}
 \begin{columns}[T]
 \begin{column}{0.6\textwidth}
 \begin{wideenumerate}
+\item Keep  \url{www.happygitwithr.com} open
 \item Go to \url{www.github.com} and make a free account
-% https://happygitwithr.com/github-acct.html#username-advice
+\begin{wideitemize}
+\item[-] \textcolor{gray}{\footnotesize Pick a professional, short username; it's hard to change later. More tips at Chapter 4.1 of happygitwithr,  \url{https://happygitwithr.com/github-acct.html\#username-advice}}
+\end{wideitemize}
 \item Make sure you have a recent version (v1.1 or later) of RStudio \url{https://www.rstudio.com/products/rstudio/download/\#download}
-\item Keep \url{www.happygitwithr.com} open
-\item Download these slides via: \url{https://github.com/kuriwaki/github-demo/raw/master/presentation-slides/kuriwaki_github.pdf}
+\item Download these slides via: \url{https://bit.ly/2XHXyl1} (also handout)
 \end{wideenumerate}
 \end{column}
 \begin{column}{0.4\textwidth}
@@ -36,30 +38,39 @@
 
 
 
-\begin{frame}{Thanks for having me}
+\begin{frame}{}
 
 \begin{columns}[T]
 
-\begin{column}{0.5\textwidth}
+\begin{column}{0.4\textwidth}
 \bfheading{About me}
 \begin{wideitemize}
-\item G-4 in Government
-\item American Politics, elections and representation
-\item Before: Political data analytics (where I learned git from \href{https://anniejw.com/}{Annie Wang})
+\item G-4 in Government \textcolor{gray}{(American Politics, elections and representation)}
+\item Before: Political data analytics \textcolor{gray}{(where I learned git from \href{https://anniejw.com/}{Annie Wang})}
 \end{wideitemize}\pause
-
+\bigskip
 \begin{wideitemize}
-\item I do some software development, 
+\item I do some software development,
 \item but most of my work is applied (``substantive'')
 \end{wideitemize}
 \end{column}\pause
-\begin{column}{0.5\textwidth}
-\bfheading{My perspective}
+\begin{column}{0.6\textwidth}
+\bfheading{An open question}
 \begin{wideitemize}
-\item Version control is mandatory for programmers (and professional data scientists)\pause
+\item Version control is mandatory for programmers \textcolor{gray}{(and professional data scientists)}\pause
 \item but does it make sense for \emph{applied} researchers who ...
-\item work with datasets that are \pause ~\alert{large},\pause ~\alert{unstructured},\pause ~\alert{prone to change},\pause ~\alert{with collaborators}
-\end{wideitemize}
+\item work with datasets that are \pause ~\alert{large},\pause ~\alert{unstructured},\pause ~\alert{prone to change},\pause ~\alert{with collaborators}?
+\end{wideitemize}\pause
+
+\bigskip
+\bfheading{My perspective}
+
+\begin{tcolorbox}
+\begin{itemize}
+\item[{}] Yes! But in moderation and in \emph{lite}
+\item[{}] These slides: A pitch, acknowledging the tradeoff, \pause rather than a full workshop or manual. \textcolor{gray}{(Extensions in final slides)}.
+\end{itemize}
+\end{tcolorbox}
 \end{column}
 \end{columns}
 \end{frame}
@@ -67,47 +78,68 @@
 \begin{frame}{Setting Expectations: Is it worth it?}
 \begin{columns}[T]
 \begin{column}{0.5\textwidth}
+\begin{minipage}[t]{\linewidth}
 \bfheading{What do Gentzkow and Shapiro say?}
 
-Definitely:
+Definitely:\\
+
 \begin{quote}
-``It will probably take you a couple days to set up a repository and learn how you want to interact with [Version Control]. You will break even on that time investment within a month or two.''\footnote[frame]{Code and Data for Social Sciences: A Practioners Guide. 2014. \url{https://perma.cc/5J9D-BTD6}.  \textcolor{gray}{Although I'm not sure about learning version control in ``a couple of days'' (I certainly couldn't!), I can guarantee reading their guide in its entirety \emph{is} a time investment you'll break even on immediately.}}
+``It will probably take you a couple days to set up a repository and learn how you want to interact with [version control]. You will break even on that time investment within a month or two.''\footnote{\scriptsize ``Code and Data for Social Sciences: A Practioners Guide.'' 2014. \url{https://perma.cc/5J9D-BTD6}.  \textcolor{gray}{Although I'm not sure about learning version control in ``a couple of days'' (I certainly couldn't!), I can guarantee reading their guide in its entirety \emph{is} a time investment you'll break even on immediately.}}\\
 \end{quote}
+
+\end{minipage}
+\bigskip
+\bigskip
+\vspace*{\fill}
+
 \end{column}
 \begin{column}{0.5\textwidth}
-but also see\footnote[frame]{\url{https://community.rstudio.com/t/version-control-with-google-drive/4032}}
+\begin{minipage}[t]{\linewidth}
+\bfheading{But takeup is still low,\footnote{\scriptsize Anecdotally, I can count full Git users in my dept. in one hand.}}
+and alternatives have attractive features too:
+\smallskip
+\centering
 \includegraphics[width = 0.8\linewidth]{github_vs_gdrive.png}
+\end{minipage}
 \end{column}
 \end{columns}
 \end{frame}
 
+\section{Version Control with Yourself (and Your Past Selves)}
 
-
-\begin{frame}{My (recommended) setup}
-\end{frame}
-
-
-\begin{frame}{Terminology}
+\begin{frame}{Terminology I (and my recommended setup)}
 \begin{columns}[T]
-\begin{column}{0.5\textwidth}
+\begin{column}{0.6\textwidth}
 \begin{wideitemize}
 \item version control \alert{tracks} each file for its content changes
-\item \alert{Git} is a particular type of software for version control (Subversion is another)
-\item \alert{GitHub} is an app (recently bought by Microsoft) to host git on the web (Bitbucket is another)
-\item A \alert{desktop client} is an app that connects a webhost like Github to your computer and facilitates simple tasks (here I use \alert{RStudio}, there are many others)
-\item A \alert{repository} is the fundamental unit of a version control, like a project folder. \pause Do not make a repository within a repository! 
+\item \alert{Git} is a particular type of software for version control \textcolor{gray}{(Subversion, or SVN, is another)}
+\item \alert{GitHub} is an app (recently bought by Microsoft) to host git on the web \textcolor{gray}{(Bitbucket is another)}
+\item A \alert{desktop client} is an app that connects a webhost like Github to your computer and facilitates simple tasks \textcolor{gray}{(here I use \alert{RStudio}, there are many others)}
+\item A \alert{repository} is the fundamental unit of a version control, like a project folder. \pause \textcolor{gray}{Do not make a repository within a repository!}
 \end{wideitemize}
 \end{column}
-\begin{column}{0.5\textwidth}
+\begin{column}{0.4\textwidth}
+\includegraphics[width = \linewidth]{Git-Logo-2Color.png}
+\smallskip
+\includegraphics[width = \linewidth]{github-logo-1.png}
+\smallskip
+\includegraphics[width = \linewidth]{RStudio-Logo-Flat.png}
 \end{column}
 \end{columns}
 \end{frame}
 
-\begin{frame}{Keep Track of how your results changed}
+\begin{frame}{Benefit 1: Keep track of how your results changed}
 \begin{columns}[T]
 \begin{column}{0.18\textwidth}
-\only<1>{\itheading{Problem: You tweak a regression specification and re-run your script, re-writing dozens of tables. You need to know how much your results changed}}
-\only<2>{\itheading{You collect more data and re-run the regressions. Now how did the results change?}}
+\only<1>{
+\itheading{You tweak a regression specification and re-run your script, re-writing dozens of tables.} 
+How much did your results change?
+}
+\only<2>{
+\itheading{You collect more data and re-run the regressions.}
+ Now how did the results change?
+ }
+
 \end{column}
 \begin{column}{0.82\textwidth}
 \only<1>{
@@ -123,16 +155,16 @@ but also see\footnote[frame]{\url{https://community.rstudio.com/t/version-contro
 \end{columns}
 \end{frame}
 
-\begin{frame}{Tracking your text changes}
+\begin{frame}{Benefit 2: Tracking your paper versions}
 \begin{columns}[T]
 \begin{column}{0.4\textwidth}
-\itheading{Problem: You start writing up your paper, \texttt{draft.tex}}
-
+\itheading{Problem: You start writing up your paper, \code{draft.tex}}
+\small
 \begin{itemize}
 \item The next day, you make a new draft. Do you overwrite?\pause
-\item Or do you call it \texttt{draft\_0305.tex} ? \texttt{draft\_03052019.tex}?\pause
+\item Or do you call it \code{draft\_0305.tex} ? \code{draft\_03052019.tex}?\pause
 \item The next week, you find a single typo. Do you ``Save As'' with a new date?\pause
-\item Three weeks later, you return to your paper.   Your computer indicates that the file named \texttt{draft\_0305.tex} was ``Last modified March 12, 2019''.
+\item Three weeks later, you return to your paper.   Your computer indicates that the file named \code{draft\_0305.tex} was ``Last modified March 12, 2019''.
 \end{itemize}
 \end{column}
 \begin{column}{0.6\textwidth}\pause
@@ -142,17 +174,19 @@ but also see\footnote[frame]{\url{https://community.rstudio.com/t/version-contro
 \end{columns}
 \end{frame}
 
-\begin{frame}{And more cool stuff like}
+\begin{frame}{Benefit 3: And more cool stuff like}
 \begin{columns}[T]
 \begin{column}{0.3\textwidth}
-\only<1>{\bfheading{Getting a free, customizable, add-free website}
-(instead of a click-and-drag Wordpress/Squarespace website)
+\only<1>{\bfheading{Getting a free, customizable, ad-free website}
+\textcolor{gray}{(instead of a click-and-drag Wordpress/Squarespace website)}
 }
 \only<2-3>{\bfheading{Work on a collaborative workbook}
-(instead of needing to add people to your Dropbox)
+\textcolor{gray}{(instead of needing to add people to your Dropbox)}
 }
-\only<4>{\bfheading{Contributing to / getting the latest on actual software packages}
-(Github issues is the de facto communication of open-source developers)
+\only<4>{\begin{minipage}{\linewidth}\bfheading{Contributing to / getting the latest on actual software packages}
+\bigskip
+(Github issues is the de facto communication of open-source developers)\footnote{\textcolor{gray}{The usual introduction to GitHub would spent most of the time discussing this topic!  To learn  package development in Git: \url{http://r-pkgs.had.co.nz/git.html}. Worth noting that package development is not so far-fetched: common custom functions should go in personal R package.}}
+\end{minipage}
 }
 \end{column}
 \begin{column}{0.7\textwidth}
@@ -164,12 +198,12 @@ but also see\footnote[frame]{\url{https://community.rstudio.com/t/version-contro
 \end{columns}
 \end{frame}
 
-\begin{frame}{Terminology}
+\begin{frame}{Terminology II: Pushing commits}
 \begin{columns}
 \begin{column}{0.5\textwidth}
 \begin{wideitemize}
-\item<1-> Files increment by \alert{commit}s. The line-by-line changes from commits are called \alert{diffs}. 
-\item<2-> Commits have a human-readable \alert{message}, and a serial code called a \alert{SHA} (like \code{992bb07}).
+\item<1-> Files increment by \alert{commit}s. The line-by-line changes from commits are called \alert{diffs}.
+\item<2-> Commits have a human-readable \alert{message} (like \code{``Coauthor prefers str()''}), and a serial code called a \alert{SHA} (like \code{992bb07}).
 \item<3-> At least two copies of your repository exist: the \alert{local} on your computer, and a \alert{remote} (hosted on Github, with URL \code{https://github.com/user/repo.git}), \pause which has the name \alert{origin}
 \item<4-> Once you make commits on your local, you \alert{push} them to your remote. (The opposite of this is a \alert{pull})
 \end{wideitemize}
@@ -187,15 +221,15 @@ but also see\footnote[frame]{\url{https://community.rstudio.com/t/version-contro
   \bfheading{Only plain-text files get tracked}
 
   This rules out:
-   {\small \pause PDFs, \pause jpg's, \pause, Microsoft Word, \pause any Powerpoint,\pause Excel (\code{xlsx}), \pause Google Docs\pause,  \code{.sav}, \code{.por}, \code{.dta}, \code{.Rds}, \code{RData}...}
-\pause 
-  \bfheading{Which requires a switch to plain-text}\pause 
+   {\small \pause PDFs (\code{.pdf}), \pause JPEGs,\pause Microsoft Word, \pause Powerpoint,\pause Excel (\code{xlsx}), \pause Google Docs, \pause \code{.sav}, \code{.por}, \code{.dta}, \code{.Rds}, \code{RData}...}
+\pause
+  \bfheading{Which requires a switch to plain-text}\pause
 
  {\small Markdown (\code{.md}) and TeX (\code{.tex}) for writing,  \pause Code (\code{.R}, \code{.py}) centered dataset generation, small datasets in \code{.csv} or \code{.txt}, \pause interweavers  like \code{.Rmd}.} \pause
 
 \bigskip
  {\footnotesize \emph{Kieran Healy, \href{https://kieranhealy.org/publications/plain-person-text/}{``The Plain Person’s Guide to Plain Text Social Science.''}}}
- 
+
 \end{column}
 \begin{column}{0.5\textwidth}
   \colorbox{yellow}{Git is {\textbf{not}} built for storing data!}\\
@@ -207,6 +241,121 @@ but also see\footnote[frame]{\url{https://community.rstudio.com/t/version-contro
 \end{columns}
 \end{frame}
 
+\begin{frame}{Another caveat: Tracking a long line (like a paragraph)}
+\begin{columns}[T]
+\begin{column}{0.4\textwidth}
+\begin{wideitemize}
+\item<1-> The unit of a change is a ``line''
+\item<1-> Git was for \textcolor{red}{programmers}, whose line of text is short ($<$ 50 characters)
+\item<2-> For \textcolor{red}{social scientists}, one line of text is a paragraph ($>$ 1000 characters)
+\item<3-> Google Docs might be actually better for paragraphs: selection and automatic versioning
+\end{wideitemize}
+\end{column}
+\begin{column}{0.6\textwidth}
+\begin{overprint}
+\onslide<1>\includegraphics[width = \linewidth]{software-dev-diff.png}
+\onslide<2>\includegraphics[width = \linewidth]{long-diff-2.png}
+\onslide<3>\includegraphics[width = \linewidth]{googledoc-diff.png}
+\end{overprint}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{And to top it off, git is chock full of jargon}
+
+\begin{columns}[T]
+\begin{column}{0.4\textwidth}
+\begin{overprint}
+\onslide<1>\includegraphics[width=\linewidth]{spoof-0.png}
+\onslide<2->\includegraphics[width=\linewidth]{spoof-1.png}
+\end{overprint}
+\end{column}
+\begin{column}{0.5\textwidth}
+\onslide<3>\includegraphics[width=\linewidth]{git-and-github-workflow.png}
+\end{column}
+\end{columns}
+
+\end{frame}
+
+\begin{frame}{Salvaging Git}
+\begin{columns}[T]
+\begin{column}{0.6\textwidth}
+\begin{wideitemize}
+\item Covers everything (if not completely well)
+\item Public repos and Private repos
+\item Explicit versioning
+\item Multiple parallel versions (branches) 
+\end{wideitemize}
+\end{column}
+\end{columns}
+\end{frame}
+
+\section{Version Control with Others}
+
+
+\begin{frame}{Demo}
+\begin{columns}[T]
+\begin{column}{0.5\textwidth}
+\bfheading{Your repository}
+\begin{itemize}
+\item Github first: Create Repository
+\item Create a RStudio Project, from a ``Version Control REpository''
+\end{itemize}
+
+
+\bfheading{Someone else's repository}
+\begin{itemize}
+\item Example: \url{https://github.com/fivethirtyeight/guns-data}
+\item Fork first, then create a separate RStudio Project
+\end{itemize}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Terminology III: Parallel version control, a.k.a branching}
+\begin{columns}[T]
+\begin{column}{0.5\textwidth}
+\bfheading{Branches \textnormal{are parallel universes of your own repository}}
+
+\centering
+\includegraphics[width =0.25\linewidth]{repo-0.png} \hspace{-1em}~ \includegraphics[width =0.5\linewidth]{commit-diff-sha-tag.png}
+
+\small
+\begin{itemize}
+  \item The first/main branch is called \alert{master} by convention. 
+  \item Software repos have a \alert{develop} branch that accumulates commits of new features.
+  \item Branches can be \alert{merged} together
+  \item Merging is a \emph{transitive verb}: merging \code{feature1} into \code{feature2} is not equivalent to the reverse
+\end{itemize}
+\end{column}
+
+
+\begin{column}{0.25\textwidth}
+\bfheading{Forks}
+are linked carbon copies you make of \emph{other people's} repositories.\\
+
+\includegraphics[width = 1.25\linewidth]{fork.png}
+\end{column}
+
+\begin{column}{0.25\textwidth}
+\bfheading{Clone}
+is the general term for copying a remote repo down to your local.\\
+
+\includegraphics[width = 1.25\linewidth]{fork-and-clone.png}
+\end{column}
+
+\end{columns}
+\end{frame}
+
+% \begin{frame}{Github is aspirational}
+% \begin{columns}[T]
+% \begin{column}{0.5\textwidth}
+% \end{column}
+% \begin{column}{0.5\textwidth}
+% \end{column}
+% \end{columns}
+% \end{frame}
+
 % \begin{frame}{Frame}
 % \begin{columns}[T]
 % \begin{column}{0.5\textwidth}
@@ -217,5 +366,37 @@ but also see\footnote[frame]{\url{https://community.rstudio.com/t/version-contro
 % \end{frame}
 
 
+\begin{frame}{What's Next}
+
+
+
+\begin{columns}[T]
+\begin{column}{0.5\textwidth}
+\bfheading{Learn by trying things out}
+\begin{wideenumerate}
+\item Create and work with a (private) repo on your own 
+\item Follow git tutorials
+\item Start sharing and contributing
+\end{wideenumerate}
+
+\end{column}
+\begin{column}{0.5\textwidth}
+\bfheading{Thanks}
+Inspirations and most infographics from 
+
+\begin{itemize}
+\item Annie Wang,
+\item Ista Zahn,
+\item Jenny Bryan and ``Happy Git with R''
+\item Gentzkow and Shapiro
+\end{itemize}
+\end{column}
+\end{columns}
+
+Questions / requests for more walkthroughs: \url{kuriwaki@g.harvard.edu}
+\end{frame}
+
+
+\end{frame}
 
 \end{document}
