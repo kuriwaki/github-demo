@@ -180,6 +180,30 @@ but also see\footnote[frame]{\url{https://community.rstudio.com/t/version-contro
 \end{columns}
 \end{frame}
 
+\begin{frame}{Now, some caveats}
+\begin{columns}[T]
+\begin{column}{0.4\textwidth}
+  \bfheading{Only plain-text files get tracked}
+
+  This rules out:
+   \pause PDFs, \pause jpg's, \pause, Microsoft Word, \pause any Microsoft Office product,\pause Google Docs\pause,  \code{.sav}, \code{.por}, \code{.dta}, \code{.Rds}, \code{RData}...
+
+  \bigskip
+  \bfheading{Which requires a switch to plain-text}
+
+  \pause Markdown (\code{.md})and TeX (\code{.tex}) for writing,  \pause Code (\code{.R}, \code{.py}) centered dataset generation, small datasets in \code{.csv} or \code{.txt}, \pause interweavers  like \code{.Rmd}, \pause
+
+
+  \emph{Kieran Healy, \href{https://kieranhealy.org/publications/plain-person-text/}{``The Plain Person’s Guide to Plain Text Social Science.''}}
+\end{column}
+\begin{column}{0.6\textwidth}
+\centering
+{\includegraphics[width = 0.8\linewidth]{pdf-notrack.png}}
+  \colorbox{yellow}{Git is {\textbf{not}} built for storing data!}\pause\\(Rely on the usual Dropbox / Google Drive / Dataverse / Cloud Servers for that)
+  \pause
+\end{column}
+\end{columns}
+\end{frame}
 
 % \begin{frame}{Frame}
 % \begin{columns}[T]
