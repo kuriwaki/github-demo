@@ -1,4 +1,4 @@
-\documentclass[ignorenonframetext,notes, 10pt, aspectratio=169]{beamer}
+\documentclass[ignorenonframetext, 10pt, aspectratio=169]{beamer}
 
 \usepackage{preamble_slides}
 
@@ -111,19 +111,27 @@ and alternatives have attractive features too:
 \begin{columns}[T]
 \begin{column}{0.6\textwidth}
 \begin{wideitemize}
-\item version control \alert{tracks} each file for its content changes
-\item \alert{Git} is a particular type of software for version control \textcolor{gray}{(Subversion, or SVN, is another)}
-\item \alert{GitHub} is an app (recently bought by Microsoft) to host git on the web \textcolor{gray}{(Bitbucket is another)}
-\item A \alert{desktop client} is an app that connects a webhost like Github to your computer and facilitates simple tasks \textcolor{gray}{(here I use \alert{RStudio}, there are many others)}
-\item A \alert{repository} is the fundamental unit of a version control, like a project folder. \pause \textcolor{gray}{Do not make a repository within a repository!}
+\item<1-> version control \alert{tracks} each file for its content changes
+\item<2-> \alert{Git} is a particular type of software for version control \textcolor{gray}{(Subversion, or SVN, is another)}
+\item<3-> \alert{GitHub} is an app (recently bought by Microsoft) to host git on the web \textcolor{gray}{(Bitbucket is another)}
+\item<4-> A \alert{desktop client} is an app that connects a webhost like Github to your computer and facilitates tasks otherwise done by \alert{command-line} \textcolor{gray}{(here I use \alert{RStudio}, there are many others)}
+\item<5-> A \alert{repository} is the fundamental unit of version control project, like a project folder / directory. \textcolor{gray}{Do not make a repository within a repository!}
 \end{wideitemize}
 \end{column}
 \begin{column}{0.4\textwidth}
-\includegraphics[width = \linewidth]{Git-Logo-2Color.png}
-\smallskip
-\includegraphics[width = \linewidth]{github-logo-1.png}
-\smallskip
-\includegraphics[width = \linewidth]{RStudio-Logo-Flat.png}
+\vspace{1cm}
+\centering
+\onslide<2->\includegraphics[width = 0.6\linewidth]{Git-Logo-2Color.png}
+
+\bigskip
+\onslide<3->\includegraphics[width = 0.6\linewidth]{github-logo-1.png}
+
+\bigskip
+\onslide<4->\includegraphics[width = 0.6\linewidth]{RStudio-Logo-Flat.png}
+
+\bigskip
+\bigskip
+\onslide<5->\includegraphics[width = 0.25\linewidth]{repo-0.png}
 \end{column}
 \end{columns}
 \end{frame}
@@ -185,7 +193,7 @@ How much did your results change?
 }
 \only<4>{\begin{minipage}{\linewidth}\bfheading{Contributing to / getting the latest on actual software packages}
 \bigskip
-(Github issues is the de facto communication of open-source developers)\footnote{\textcolor{gray}{The usual introduction to GitHub would spent most of the time discussing this topic!  To learn  package development in Git: \url{http://r-pkgs.had.co.nz/git.html}. Worth noting that package development is not so far-fetched: common custom functions should go in personal R package.}}
+Github issues is the de facto communication of open-source developers.\footnote{\textcolor{gray}{The usual introduction to GitHub would spent most of the time discussing this topic!  To learn  package development in Git: \url{http://r-pkgs.had.co.nz/git.html}. Worth noting that package development is not so far-fetched: common custom functions should go in personal R package.}}
 \end{minipage}
 }
 \end{column}
@@ -203,7 +211,7 @@ How much did your results change?
 \begin{column}{0.5\textwidth}
 \begin{wideitemize}
 \item<1-> Files increment by \alert{commit}s. The line-by-line changes from commits are called \alert{diffs}.
-\item<2-> Commits have a human-readable \alert{message} (like \code{``Coauthor prefers str()''}), and a serial code called a \alert{SHA} (like \code{992bb07}).
+\item<2-> Commits have a human-readable \alert{message}, and a serial code called a \alert{SHA} (like \code{992bb07}).
 \item<3-> At least two copies of your repository exist: the \alert{local} on your computer, and a \alert{remote} (hosted on Github, with URL \code{https://github.com/user/repo.git}), \pause which has the name \alert{origin}
 \item<4-> Once you make commits on your local, you \alert{push} them to your remote. (The opposite of this is a \alert{pull})
 \end{wideitemize}
@@ -234,7 +242,7 @@ How much did your results change?
 \begin{column}{0.5\textwidth}
   \colorbox{yellow}{Git is {\textbf{not}} built for storing data!}\\
 \centering
-{\includegraphics[width = 0.9\linewidth]{pdf-notrack.png}}
+\onslide<1->{\includegraphics[width = 0.9\linewidth]{pdf-notrack.png}}
 \flushleft
   (Rely on the usual Dropbox / Google Drive / Dataverse / Cloud Servers for that)
 \end{column}
@@ -293,19 +301,22 @@ How much did your results change?
 \section{Version Control with Others}
 
 
-\begin{frame}{Demo}
+\begin{frame}{Demo (as time permits) - Questions?}
 \begin{columns}[T]
 \begin{column}{0.5\textwidth}
-\bfheading{Your repository}
+\bfheading{Your repository - ``Github first''}
 \begin{itemize}
-\item Github first: Create Repository
-\item Create a RStudio Project, from a ``Version Control REpository''
+\item Create a remote repository on your GitHub account
+\item Create a New RStudio Project (Top-right corner), from a ``Version Control Repository''
+\item Enter the remote repo's URL when prompted. 
+\item Use the Git pane on the top-right to push, pull, diff.
 \end{itemize}
+\end{column}
+\begin{column}{0.5\textwidth}
 
-
-\bfheading{Someone else's repository}
+\bfheading{Someone else's repository - also ``Github first''}
 \begin{itemize}
-\item Example: \url{https://github.com/fivethirtyeight/guns-data}
+\item Example: \url{https://github.com/fivethirtyeight/guns-data}, or mine: \url{https://github.com/kuriwaki/github-demo}
 \item Fork first, then create a separate RStudio Project
 \end{itemize}
 \end{column}
@@ -322,8 +333,8 @@ How much did your results change?
 
 \small
 \begin{itemize}
-  \item The first/main branch is called \alert{master} by convention. 
-  \item Software repos have a \alert{develop} branch that accumulates commits of new features.
+  \item The first/main branch is called \alert{master} by convention. \pause
+  \item Software repos have a \alert{develop} branch that accumulates commits of new features.\pause
   \item Branches can be \alert{merged} together
   \item Merging is a \emph{transitive verb}: merging \code{feature1} into \code{feature2} is not equivalent to the reverse
 \end{itemize}
@@ -390,10 +401,10 @@ Inspirations and most infographics from
 \item Jenny Bryan and ``Happy Git with R''
 \item Gentzkow and Shapiro
 \end{itemize}
+Questions / requests for more walkthroughs: \url{kuriwaki@g.harvard.edu}
 \end{column}
 \end{columns}
 
-Questions / requests for more walkthroughs: \url{kuriwaki@g.harvard.edu}
 \end{frame}
 
 
