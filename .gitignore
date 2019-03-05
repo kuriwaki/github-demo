@@ -5,6 +5,8 @@
 github-demo.Rproj
 .Rproj.user/
 
+# Data
+*.sav
 
 # TeX
 ## Core latex/pdflatex auxiliary files:
