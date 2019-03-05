@@ -91,6 +91,7 @@ but also see\footnote[frame]{\url{https://community.rstudio.com/t/version-contro
 \begin{columns}[T]
 \begin{column}{0.5\textwidth}
 \begin{wideitemize}
+\item version control \alert{tracks} each file for its content changes
 \item \alert{Git} is a particular type of software for version control (Subversion is another)
 \item \alert{GitHub} is an app (recently bought by Microsoft) to host git on the web (Bitbucket is another)
 \item A \alert{desktop client} is an app that connects a webhost like Github to your computer and facilitates simple tasks (here I use \alert{RStudio}, there are many others)
@@ -182,25 +183,26 @@ but also see\footnote[frame]{\url{https://community.rstudio.com/t/version-contro
 
 \begin{frame}{Now, some caveats}
 \begin{columns}[T]
-\begin{column}{0.4\textwidth}
+\begin{column}{0.5\textwidth}
   \bfheading{Only plain-text files get tracked}
 
   This rules out:
-   \pause PDFs, \pause jpg's, \pause, Microsoft Word, \pause any Microsoft Office product,\pause Google Docs\pause,  \code{.sav}, \code{.por}, \code{.dta}, \code{.Rds}, \code{RData}...
+   {\small \pause PDFs, \pause jpg's, \pause, Microsoft Word, \pause any Powerpoint,\pause Excel (\code{xlsx}), \pause Google Docs\pause,  \code{.sav}, \code{.por}, \code{.dta}, \code{.Rds}, \code{RData}...}
+\pause 
+  \bfheading{Which requires a switch to plain-text}\pause 
 
-  \bigskip
-  \bfheading{Which requires a switch to plain-text}
+ {\small Markdown (\code{.md}) and TeX (\code{.tex}) for writing,  \pause Code (\code{.R}, \code{.py}) centered dataset generation, small datasets in \code{.csv} or \code{.txt}, \pause interweavers  like \code{.Rmd}.} \pause
 
-  \pause Markdown (\code{.md})and TeX (\code{.tex}) for writing,  \pause Code (\code{.R}, \code{.py}) centered dataset generation, small datasets in \code{.csv} or \code{.txt}, \pause interweavers  like \code{.Rmd}, \pause
-
-
-  \emph{Kieran Healy, \href{https://kieranhealy.org/publications/plain-person-text/}{``The Plain Person’s Guide to Plain Text Social Science.''}}
+\bigskip
+ {\footnotesize \emph{Kieran Healy, \href{https://kieranhealy.org/publications/plain-person-text/}{``The Plain Person’s Guide to Plain Text Social Science.''}}}
+ 
 \end{column}
-\begin{column}{0.6\textwidth}
+\begin{column}{0.5\textwidth}
+  \colorbox{yellow}{Git is {\textbf{not}} built for storing data!}\\
 \centering
-{\includegraphics[width = 0.8\linewidth]{pdf-notrack.png}}
-  \colorbox{yellow}{Git is {\textbf{not}} built for storing data!}\pause\\(Rely on the usual Dropbox / Google Drive / Dataverse / Cloud Servers for that)
-  \pause
+{\includegraphics[width = 0.9\linewidth]{pdf-notrack.png}}
+\flushleft
+  (Rely on the usual Dropbox / Google Drive / Dataverse / Cloud Servers for that)
 \end{column}
 \end{columns}
 \end{frame}
