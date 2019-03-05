@@ -8,6 +8,10 @@ serves as a demo that people can fork and clone,
   - Variety of Git: Use Github via the Rstudio project
   - Purpose: Introduce core concepts and git and facilitate getting
     started for your own work (collaborative work could come later).
+      - A bit more of a pitch / lecture than a workshop, because actual
+        tasks can be really varied
+      - also: self-learning is useful, and Jenny Bryan’s book is great
+        for step-by-step following (in R)
 
 ## Setting up
 
