@@ -3,11 +3,11 @@
 \usepackage{preamble_slides}
 
 
-\title{\textbf{\Large{Git for Students in the Social Sciences}}}
+\title{\textbf{\Large{Git for Students in the Social Sciences$^*$: A Pitch}}}
 \providecommand{\subtitle}[1]{}
-\subtitle{(not software developers)}
+\subtitle{($^*$ not software developers)}
 \author{Shiro Kuriwaki}
-\date{March 5, 2019}
+\date{\small \textcolor{gray}{Presented March 5, 2019;~~ Last updated \today}}
 
 \begin{document}
 
@@ -21,7 +21,7 @@
 \item[-] \textcolor{gray}{\footnotesize Pick a professional, short username; it's hard to change later. More tips at Chapter 4.1 of happygitwithr,  \url{https://happygitwithr.com/github-acct.html\#username-advice}}
 \end{wideitemize}
 \item Make sure you have a recent version (v1.1 or later) of RStudio \url{https://www.rstudio.com/products/rstudio/download/\#download}
-\item Download these slides via: \url{https://bit.ly/2XHXyl1} (also handout)
+\item Download these slides via: \url{https://bit.ly/2XHXyl1}.
 \end{wideenumerate}
 \end{column}
 \begin{column}{0.4\textwidth}
@@ -34,6 +34,9 @@
 \centering
 \includegraphics[width = 0.9\linewidth]{portfolio.png}
 \maketitle
+
+\flushright
+{\footnotesize \emph{Figure}: From \url{https://github.com/kuriwaki}}
 \end{frame}
 
 
@@ -59,7 +62,7 @@
 \begin{wideitemize}
 \item Version control is mandatory for programmers \textcolor{gray}{(and professional data scientists)}\pause
 \item but does it make sense for \emph{applied} researchers who ...
-\item work with datasets that are \pause ~\alert{large},\pause ~\alert{unstructured},\pause ~\alert{prone to change},\pause ~\alert{with collaborators}?
+\item work with datasets that are \pause \alert{with collaborators}, ~\alert{large},\pause ~\alert{unstructured},\pause ~and \alert{prone to change}?
 \end{wideitemize}\pause
 
 \bigskip
@@ -75,7 +78,7 @@
 \end{columns}
 \end{frame}
 
-\begin{frame}{Setting Expectations: Is it worth it?}
+\begin{frame}{Setting expectations: Is it worth it?}
 \begin{columns}[T]
 \begin{column}{0.5\textwidth}
 \begin{minipage}[t]{\linewidth}
@@ -109,17 +112,16 @@ and alternatives have attractive features too:
 
 \begin{frame}{Terminology I (and my recommended setup)}
 \begin{columns}[T]
-\begin{column}{0.6\textwidth}
+\begin{column}{0.65\textwidth}
 \begin{wideitemize}
 \item<1-> version control \alert{tracks} each file for its content changes
-\item<2-> \alert{Git} is a particular type of software for version control \textcolor{gray}{(Subversion, or SVN, is another)}
-\item<3-> \alert{GitHub} is an app (recently bought by Microsoft) to host git on the web \textcolor{gray}{(Bitbucket is another)}
-\item<4-> A \alert{desktop client} is an app that connects a webhost like Github to your computer and facilitates tasks otherwise done by \alert{command-line} \textcolor{gray}{(here I use \alert{RStudio}, there are many others)}
-\item<5-> A \alert{repository} is the fundamental unit of version control project, like a project folder / directory. \textcolor{gray}{Do not make a repository within a repository!}
+\item<2-> \alert{Git} is a particular type of software for version control \textcolor{gray}{(Subversion, or SVN, is an alternative)}
+\item<3-> \alert{GitHub} is an app (acquired by Microsoft) to host git on the web \textcolor{gray}{(Bitbucket and GitLab are alternatives)}
+\item<4-> A \alert{desktop client} is an app that connects a webhost like Github to your computer and facilitates tasks otherwise done by \alert{command-line} \textcolor{gray}{(here I use \alert{RStudio}, Github Desktop is an alternative)}
+\item<5-> A \alert{repository} is the fundamental unit of version control project: A  parent folder with a hidden folder called \code{.git} with the tracking technology. \textcolor{gray}{Do not make a repository within a repository!}
 \end{wideitemize}
 \end{column}
-\begin{column}{0.4\textwidth}
-\vspace{1cm}
+\begin{column}{0.35\textwidth}
 \centering
 \onslide<2->\includegraphics[width = 0.6\linewidth]{Git-Logo-2Color.png}
 
@@ -140,7 +142,7 @@ and alternatives have attractive features too:
 \begin{columns}[T]
 \begin{column}{0.18\textwidth}
 \only<1>{
-\itheading{You tweak a regression specification and re-run your script, re-writing dozens of tables.} 
+\itheading{Problem:  You tweak a regression specification and re-run your script, re-writing dozens of tables.} 
 How much did your results change?
 }
 \only<2>{
@@ -184,7 +186,7 @@ How much did your results change?
 
 \begin{frame}{Benefit 3: And more cool stuff like}
 \begin{columns}[T]
-\begin{column}{0.3\textwidth}
+\begin{column}{0.4\textwidth}
 \only<1>{\bfheading{Getting a free, customizable, ad-free website}
 \textcolor{gray}{(instead of a click-and-drag Wordpress/Squarespace website)}
 }
@@ -193,11 +195,14 @@ How much did your results change?
 }
 \only<4>{\begin{minipage}{\linewidth}\bfheading{Contributing to / getting the latest on actual software packages}
 \bigskip
-Github issues is the de facto communication of open-source developers.\footnote{\textcolor{gray}{The usual introduction to GitHub would spent most of the time discussing this topic!  To learn  package development in Git: \url{http://r-pkgs.had.co.nz/git.html}. Worth noting that package development is not so far-fetched: common custom functions should go in personal R package.}}
+Github issues is the de facto communication of open-source developers.\footnote[frame]{\textcolor{gray}{The usual introduction to GitHub would spent most of the time discussing this topic!  Package development in Git: \url{http://r-pkgs.had.co.nz/git.html}.}}
+\bigskip
+
+As a researcher or lab group, \textcolor{red}{creating your own package} for internal use is not far-fetched: common functions and critical workhorse functions that get tweaked should be bundled in a R package and tracked. Try it out!
 \end{minipage}
 }
 \end{column}
-\begin{column}{0.7\textwidth}
+\begin{column}{0.6\textwidth}
 \only<1> {\includegraphics[width = \linewidth]{website-pages.png}}
 \only<2> {\includegraphics[width = 0.7\linewidth]{prefresher-book.png}}
 \only<3> {\includegraphics[width = \linewidth]{prefresher-network.png}}
@@ -207,18 +212,32 @@ Github issues is the de facto communication of open-source developers.\footnote{
 \end{frame}
 
 \begin{frame}{Terminology II: Pushing commits}
+\begin{columns}[T]
+\begin{column}{0.55\textwidth}
+\begin{wideitemize}
+\item<1-> Files increment by \alert{commit}s. The line-by-line changes between a pair of commits is a \alert{diff}.
+\item<2-> Commits are explicit, not automatic: Unlike the \code{Cmd} + \code{S} Save, commits are labelled by a human-readable \alert{message}, and a serial code called a \alert{SHA} (like \code{992bb07}). 
+\item<2->And git requires you \code{stage} a change by \alert{add}ing it, before turning it a commit. \textcolor{gray}{(but can worry about this later)}
+\item<3-> Git sees a files as essentially an accumulation of commits. That accumulation is a \alert{branch}. \textcolor{gray}{(this naming choice makes more sense when there are more than one linear histories get tracked)} 
+\end{wideitemize}
+\end{column}
+\begin{column}{0.45\textwidth}
+\includegraphics[width = \linewidth]{commit-diff-sha-tag.png}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Terminology III: local and remote, push and pull}
 \begin{columns}
 \begin{column}{0.5\textwidth}
 \begin{wideitemize}
-\item<1-> Files increment by \alert{commit}s. The line-by-line changes from commits are called \alert{diffs}.
-\item<2-> Commits have a human-readable \alert{message}, and a serial code called a \alert{SHA} (like \code{992bb07}).
-\item<3-> At least two copies of your repository exist: the \alert{local} on your computer, and a \alert{remote} (hosted on Github, with URL \code{https://github.com/user/repo.git}), \pause which has the name \alert{origin}
-\item<4-> Once you make commits on your local, you \alert{push} them to your remote. (The opposite of this is a \alert{pull})
+\item Two copies of your repo exist: the \alert{local} on your computer, and a \alert{remote} (hosted on Github, with URL \code{https://github.com/user/repo.git}), \pause which has the name \alert{origin}
+\item Once you make commits on your local, you \alert{push} them to your remote. \textcolor{gray}{(Imagine an upward push, from the ground to the cloud)}
+\item The opposite of this is a \alert{pull}. \textcolor{gray}(A common term that gets thrown around is a \alert{pull request}, but let's worry about that later)
 \end{wideitemize}
 \end{column}
 \begin{column}{0.5\textwidth}
-\onslide<1->\includegraphics[width = \linewidth]{commit-diff-sha-tag.png}
-\onslide<3-4>\includegraphics[width = \linewidth]{pull-push-yours.png}
+\includegraphics[width = \linewidth]{pull-push-yours.png}
 \end{column}
 \end{columns}
 \end{frame}
@@ -226,10 +245,12 @@ Github issues is the de facto communication of open-source developers.\footnote{
 \begin{frame}{Now, some caveats}
 \begin{columns}[T]
 \begin{column}{0.5\textwidth}
-  \bfheading{Only plain-text files get tracked}
+  \bfheading{Only plain-text files get tracked line-by-line}
 
-  This rules out:
-   {\small \pause PDFs (\code{.pdf}), \pause JPEGs,\pause Microsoft Word, \pause Powerpoint,\pause Excel (\code{xlsx}), \pause Google Docs, \pause \code{.sav}, \code{.por}, \code{.dta}, \code{.Rds}, \code{RData}...}
+  Things you \emph{can} track, but with little value-add due to version control:\\
+
+  \smallskip
+   {\small \pause PDFs (\code{.pdf}), \pause JPEGs,\pause~ Microsoft Word, \pause Powerpoint,\pause Excel (\code{xlsx}), \pause Google Docs, \pause \code{.sav}, \code{.por}, \code{.dta}, \code{.Rds}, \code{RData}...}
 \pause
   \bfheading{Which requires a switch to plain-text}\pause
 
@@ -238,13 +259,17 @@ Github issues is the de facto communication of open-source developers.\footnote{
 \bigskip
  {\footnotesize \emph{Kieran Healy, \href{https://kieranhealy.org/publications/plain-person-text/}{``The Plain Person’s Guide to Plain Text Social Science.''}}}
 
+\medskip
+
+ {\footnotesize GitHub places a 100MB cap on each file, and a 1GB cap on the entire directory.}
+
 \end{column}
 \begin{column}{0.5\textwidth}
   \colorbox{yellow}{Git is {\textbf{not}} built for storing data!}\\
 \centering
 \onslide<1->{\includegraphics[width = 0.9\linewidth]{pdf-notrack.png}}
 \flushleft
-  (Rely on the usual Dropbox / Google Drive / Dataverse / Cloud Servers for that)
+$\leadsto$ Rely on the usual Dropbox / Google Drive / Dataverse / Cloud Servers for that
 \end{column}
 \end{columns}
 \end{frame}
@@ -323,7 +348,7 @@ Github issues is the de facto communication of open-source developers.\footnote{
 \end{columns}
 \end{frame}
 
-\begin{frame}{Terminology III: Parallel version control, a.k.a branching}
+\begin{frame}{Terminology IV: Parallel version control, a.k.a branching}
 \begin{columns}[T]
 \begin{column}{0.5\textwidth}
 \bfheading{Branches \textnormal{are parallel universes of your own repository}}
@@ -345,12 +370,23 @@ Github issues is the de facto communication of open-source developers.\footnote{
 \bfheading{Forks}
 are linked carbon copies you make of \emph{other people's} repositories.\\
 
-\includegraphics[width = 1.25\linewidth]{fork.png}
+
+\small 
+\begin{itemize}
+\item If a repo is a public, you can always fork it without permission
+\item Even though your fork is ``linked'', they are different repos now: To synch, you need to explicitly pull.
+\end{itemize}
+
+
 \end{column}
 
 \begin{column}{0.25\textwidth}
 \bfheading{Clone}
 is the general term for copying a remote repo down to your local.\\
+
+\smallskip
+
+\includegraphics[width = 1.25\linewidth]{fork.png}\\
 
 \includegraphics[width = 1.25\linewidth]{fork-and-clone.png}
 \end{column}
@@ -383,7 +419,12 @@ is the general term for copying a remote repo down to your local.\\
 
 \begin{columns}[T]
 \begin{column}{0.5\textwidth}
-\bfheading{Learn by trying things out}
+\bfheading{Learn by starting small}
+
+\textcolor{gray}{(converting your workflow to git, especially in a collaborative setting, is slow and frustrating)}
+
+\smallskip
+
 \begin{wideenumerate}
 \item Create and work with a (private) repo on your own 
 \item Follow git tutorials
@@ -396,11 +437,13 @@ is the general term for copying a remote repo down to your local.\\
 Inspirations and most infographics from 
 
 \begin{itemize}
+\item The Harvard Psychology Methods Dinner
 \item Annie Wang,
 \item Ista Zahn,
 \item Jenny Bryan and ``Happy Git with R''
 \item Gentzkow and Shapiro
 \end{itemize}
+\bigskip
 Questions / requests for more walkthroughs: \url{kuriwaki@g.harvard.edu}
 \end{column}
 \end{columns}
