@@ -36,7 +36,7 @@
 \maketitle
 
 \flushright
-{\footnotesize \emph{Figure}: From \url{https://github.com/kuriwaki}}
+{\footnotesize \emph{Top Figure}: From \url{https://github.com/kuriwaki}}
 \end{frame}
 
 
@@ -79,6 +79,9 @@
 \end{frame}
 
 \begin{frame}{Setting expectations: Is it worth it?}
+
+\renewcommand\thempfootnote{\fnsymbol{mpfootnote}}
+\vspace{-1cm}
 \begin{columns}[T]
 \begin{column}{0.5\textwidth}
 \begin{minipage}[t]{\linewidth}
@@ -87,7 +90,7 @@
 Definitely:\\
 
 \begin{quote}
-``It will probably take you a couple days to set up a repository and learn how you want to interact with [version control]. You will break even on that time investment within a month or two.''\footnote{\scriptsize ``Code and Data for Social Sciences: A Practioners Guide.'' 2014. \url{https://perma.cc/5J9D-BTD6}.  \textcolor{gray}{Although I'm not sure about learning version control in ``a couple of days'' (I certainly couldn't!), I can guarantee reading their guide in its entirety \emph{is} a time investment you'll break even on immediately.}}\\
+``It will probably take you a couple days to set up a repository and learn how you want to interact with [version control]. You will break even on that time investment within a month or two.''\footnote[2]{\scriptsize ``Code and Data for Social Sciences: A Practioners Guide.'' 2014. \url{https://perma.cc/5J9D-BTD6}.  \textcolor{gray}{Although learning git in ``a couple of days'' sounds too optimistic (I certainly couldn't!), I can guarantee reading their guide in its entirety \emph{is} a time investment you'll break even on immediately.}}\\
 \end{quote}
 
 \end{minipage}
@@ -98,7 +101,7 @@ Definitely:\\
 \end{column}
 \begin{column}{0.5\textwidth}
 \begin{minipage}[t]{\linewidth}
-\bfheading{But takeup is still low,\footnote{\scriptsize Anecdotally, I can count full Git users in my dept. in one hand.}}
+\bfheading{But takeup is still low,\footnote[3]{\scriptsize Anecdotally, I can count full Git users in my department in one hand. Much more in a Psych/lab setting.}}
 and alternatives have attractive features too:
 \smallskip
 \centering
@@ -249,7 +252,8 @@ As a researcher or lab group, \textcolor{red}{creating your own package} for int
 
   Things you \emph{can} track, but with little value-add due to version control:\\
 
-  \smallskip
+  \medskip
+
    {\small \pause PDFs (\code{.pdf}), \pause JPEGs,\pause~ Microsoft Word, \pause Powerpoint,\pause Excel (\code{xlsx}), \pause Google Docs, \pause \code{.sav}, \code{.por}, \code{.dta}, \code{.Rds}, \code{RData}...}
 \pause
   \bfheading{Which requires a switch to plain-text}\pause
