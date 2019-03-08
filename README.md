@@ -4,12 +4,14 @@ git for social science students (not software developers)
 ## About
 
 This repository was made for slides to introduce Git and Github prepared
-for a workshop at the *Harvard Psychology Department Methods Dinner* .
+for a workshop of graduate students at the *Harvard Psychology
+Department Methods Dinner* .
 
   - Jump to the [compiled
     slides](https://github.com/kuriwaki/github-demo/blob/master/presentation-slides/kuriwaki_github.pdf)
     (in the presentation-slides folder).
-  - Slides will be updated a bit more; suggestions welcome\!
+  - There’s not writeup (yet), so the slides are on the wordier side.
+  - Any suggestions are very much appreciated.
 
 ## Outline
 
@@ -21,9 +23,3 @@ for a workshop at the *Harvard Psychology Department Methods Dinner* .
         tasks can be really varied
       - also: self-learning is useful, and Jenny Bryan’s book is great
         for step-by-step following (in R)
-
-## Setting up
-
-  - Get a Github account
-  - Make sure you have the newest version of Rstudio
-  - Keep <https://happygitwithr.com/> open
