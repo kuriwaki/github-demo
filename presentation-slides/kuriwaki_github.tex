@@ -65,13 +65,14 @@
 \item work with datasets that are \pause \alert{with collaborators}, ~\alert{large},\pause ~\alert{unstructured},\pause ~and \alert{prone to change}?
 \end{wideitemize}\pause
 
-\bigskip
+\medskip
 \bfheading{My perspective}
 
 \begin{tcolorbox}
 \begin{itemize}
-\item[{}] Yes! But in moderation and in \emph{lite}
-\item[{}] These slides: A pitch, acknowledging the tradeoff, \pause rather than a full workshop or manual. \textcolor{gray}{(Extensions in final slides)}.
+\item[{}] Yes! But in moderation and in \emph{lite}.
+\item[{}] This deck is a  pitch (while acknowledging Git's inconveniences) and introduction,
+\item[{}] rather than a full workshop or manual.
 \end{itemize}
 \end{tcolorbox}
 \end{column}
@@ -111,17 +112,41 @@ and alternatives have attractive features too:
 \end{columns}
 \end{frame}
 
+\begin{frame}{Common Misconceptions}
+\begin{columns}
+\begin{column}{0.8\textwidth}
+\begin{wideenumerate}
+\item \textcolor{gray}{``Github is a data science tool for sharing data''}
+\begin{wideitemize}
+\item[{}] $\leadsto$ \pause It's built more for version controlling plain-text \textcolor{red}{code} (that analyzes data) and \textcolor{red}{text} (that documents it).
+\end{wideitemize}
+\item \textcolor{gray}{``Git is only relevant for software developers''}
+\begin{wideitemize}
+\item[{}] $\leadsto$ \pause It also has distinct benefits for the applied researchers' workflow
+\end{wideitemize}
+\item \textcolor{gray}{``Version control is \emph{only} useful for collaborative projects''}
+\begin{wideitemize}
+\item[{}] $\leadsto$ \pause No, in fact we (Bryan's book) recommend putting your \textcolor{red}{solo work} under version control,
+\item[{}] then move on to more complicated collaborations. 
+\item[{}] {(That's how I'll organize the rest of these slides)}
+\end{wideitemize}
+\end{wideenumerate}
+\end{column}
+\end{columns}
+\end{frame}
+
+
 \section{Version Control with Yourself (and Your Past Selves)}
 
-\begin{frame}{Terminology I (and my recommended setup)}
+\begin{frame}{Terminology I  - and recommended setup}
 \begin{columns}[T]
 \begin{column}{0.65\textwidth}
 \begin{wideitemize}
-\item<1-> version control \alert{tracks} each file for its content changes
+\item<1-> A version control system \alert{tracks} changes in file content
 \item<2-> \alert{Git} is a particular type of software for version control \textcolor{gray}{(Subversion, or SVN, is an alternative)}
 \item<3-> \alert{GitHub} is an app (acquired by Microsoft) to host git on the web \textcolor{gray}{(Bitbucket and GitLab are alternatives)}
-\item<4-> A \alert{desktop client} is an app that connects a webhost like Github to your computer and facilitates tasks otherwise done by \alert{command-line} \textcolor{gray}{(here I use \alert{RStudio}, Github Desktop is an alternative)}
-\item<5-> A \alert{repository} is the fundamental unit of version control project: A  parent folder with a hidden folder called \code{.git} with the tracking technology. \textcolor{gray}{Do not make a repository within a repository!}
+\item<4-> A \alert{desktop client} is an app that connects a webhost like Github to your computer and facilitates tasks otherwise done by \alert{command-line} \textcolor{gray}{(here I use \alert{RStudio}; Github Desktop is an alternative)}
+\item<5-> A \alert{repository} is the fundamental unit of a version control project. It's just a regular project folder with a (hidden) subfolder named \code{.git} added to it. \textcolor{gray}{( That \code{.git} contains the entirety of the project's versions)}  
 \end{wideitemize}
 \end{column}
 \begin{column}{0.35\textwidth}
@@ -136,7 +161,10 @@ and alternatives have attractive features too:
 
 \bigskip
 \bigskip
-\onslide<5->\includegraphics[width = 0.25\linewidth]{repo-0.png}
+\onslide<5->\includegraphics[width = 0.25\linewidth]{repo-0.png}\\
+
+\flushright
+\textcolor{gray}{\footnotesize Don't make a repository within a repository!}
 \end{column}
 \end{columns}
 \end{frame}
@@ -145,7 +173,7 @@ and alternatives have attractive features too:
 \begin{columns}[T]
 \begin{column}{0.18\textwidth}
 \only<1>{
-\itheading{Problem:  You tweak a regression specification and re-run your script, re-writing dozens of tables.} 
+\itheading{Problem:  You tweak a regression specification and re-run your script, re-writing dozens of tables.}
 How much did your results change?
 }
 \only<2>{
@@ -219,9 +247,9 @@ As a researcher or lab group, \textcolor{red}{creating your own package} for int
 \begin{column}{0.55\textwidth}
 \begin{wideitemize}
 \item<1-> Files increment by \alert{commit}s. The line-by-line changes between a pair of commits is a \alert{diff}.
-\item<2-> Commits are explicit, not automatic: Unlike the \code{Cmd} + \code{S} Save, commits are labelled by a human-readable \alert{message}, and a serial code called a \alert{SHA} (like \code{992bb07}). 
-\item<2->And git requires you \code{stage} a change by \alert{add}ing it, before turning it a commit. \textcolor{gray}{(but can worry about this later)}
-\item<3-> Git sees a files as essentially an accumulation of commits. That accumulation is a \alert{branch}. \textcolor{gray}{(this naming choice makes more sense when there are more than one linear histories get tracked)} 
+\item<2-> Commits are explicit, not automatic: Unlike the \code{Cmd} + \code{S} Save, commits are labelled by a human-readable \alert{message}, and a serial code called a \alert{SHA} (like \code{992bb07}).
+\item<2->And git requires you \code{stage} a change by \alert{add}ing it, before turning it a commit. \textcolor{gray}{(but let's worry about this later)}
+\item<3-> Git sees a files as essentially an accumulation of commits. That accumulation is a \alert{branch}. \textcolor{gray}{(this naming choice makes more sense with more than one ``branch.'')}
 \end{wideitemize}
 \end{column}
 \begin{column}{0.45\textwidth}
@@ -229,6 +257,7 @@ As a researcher or lab group, \textcolor{red}{creating your own package} for int
 \end{column}
 \end{columns}
 \end{frame}
+
 
 \begin{frame}{Terminology III: local and remote, push and pull}
 \begin{columns}
@@ -251,22 +280,25 @@ As a researcher or lab group, \textcolor{red}{creating your own package} for int
 \begin{column}{0.6\textwidth}
   \bfheading{Only plain-text files get tracked line-by-line}
 
-  Things you \emph{can} track, but with little value-add due to version control:\\
+  So non plain-text files:\\
 
   \medskip
 
-   {\small \pause PDFs (\code{.pdf}), \pause JPEGs,\pause~ Microsoft Word, \pause Powerpoint,\pause Excel (\code{xlsx}), \pause Google Docs, \pause \code{.sav}, \code{.por}, \code{.dta}, \code{.Rds}, \code{RData}...}
-\pause
-  \bfheading{Which requires a switch to plain-text}\pause
+   {\small e.g.  PDFs (\code{.pdf}), \pause JPEGs,\pause~ Microsoft Word, \pause Powerpoint,  Excel (\code{xlsx}), Google Docs, \pause \code{.sav}, \code{.por}, \code{.dta}, \code{.Rds}, \code{RData}...}
 
- {\small Markdown (\code{.md}) and TeX (\code{.tex}) for writing,  \pause Code (\code{.R}, \code{.py}) centered dataset generation, small datasets in \code{.csv} or \code{.txt}, \pause interweavers  like \code{.Rmd}.} \pause
+ can be tracked, but git's value-add is small here.
+\pause
+
+  \bfheading{Therefore, requires a switch to working with}\pause
+
+ {\small Markdown (\code{.md}) and TeX (\code{.tex}) for writing,  \pause code (\code{.R}, \code{.py})-centered output, small datasets in \code{.csv} or \code{.txt}, \pause interweavers  like \code{.Rmd}.} 
 
 \bigskip
  {\footnotesize \emph{Kieran Healy, \href{https://kieranhealy.org/publications/plain-person-text/}{``The Plain Person’s Guide to Plain Text Social Science.''}}}
 
 \medskip
 
- {\footnotesize GitHub places a 100MB cap on each file, and a 1GB cap on the entire directory.}
+ {\footnotesize GitHub places a 100MB cap on each file, and a 1GB cap on the entire directory. Anything larger is \textcolor{red}{not} trackable in GitHub. }
 
 \end{column}
 \begin{column}{0.4\textwidth}
@@ -322,7 +354,7 @@ $\leadsto$ Rely on the usual Dropbox / Google Drive / Dataverse / Cloud Servers 
 \item Covers everything (if not completely well)
 \item Public repos and Private repos
 \item Explicit versioning
-\item Multiple parallel versions (branches) 
+\item Multiple parallel versions (branches)
 \end{wideitemize}
 \end{column}
 \end{columns}
@@ -331,23 +363,38 @@ $\leadsto$ Rely on the usual Dropbox / Google Drive / Dataverse / Cloud Servers 
 \section{Version Control with Others}
 
 
-\begin{frame}{Demo (as time permits) - Questions?}
+\begin{frame}{Demo, in ``GitHub first, then git'' ordering}
 \begin{columns}[T]
-\begin{column}{0.5\textwidth}
-\bfheading{Your repository - ``Github first''}
+\begin{column}{0.33\textwidth}
+\bfheading{1. Someone else's repository}
+\footnotesize
 \begin{itemize}
-\item Create a remote repository on your GitHub account
-\item Create a New RStudio Project (Top-right corner), from a ``Version Control Repository''
-\item Enter the remote repo's URL when prompted. 
-\item Use the Git pane on the top-right to push, pull, diff.
+\item Familiarize yourself with \url{https://github.com/fivethirtyeight/guns-data}.
+\item From RStudio, create a New RStudio Project with Version Control $>$ Git $>$ Provide the URL
+\item Make a change in Michael Casselman's code. 
+\item $\rightarrow$ commit with the Git pane on the top-right.
+\item Try ``pushing'' it: It \textcolor{red}{won't} work, because \code{fivethirtyeight/guns} is not \emph{your} remote repo. (the local repo is yours)
 \end{itemize}
 \end{column}
-\begin{column}{0.5\textwidth}
-
-\bfheading{Someone else's repository - also ``Github first''}
+\begin{column}{0.33\textwidth}
+\bfheading{2. Retry after ``Forking''}
+\footnotesize
 \begin{itemize}
-\item Example: \url{https://github.com/fivethirtyeight/guns-data}, or mine: \url{https://github.com/kuriwaki/github-demo}
-\item Fork first, then create a separate RStudio Project
+  \item Visit \url{https://github.com/fivethirtyeight/guns-data} again but now click ``Fork''
+  \item Verify that it leads you to \emph{your} GitHub account. Otherwise the same.
+  \item Creating another RStudio Project with the new URL. 
+  \item Try the same change in Casselman's code, commit, then push
+  \item This \textcolor{red}{will} work, because the remote is yours
+\end{itemize}
+\end{column}
+\begin{column}{0.33\textwidth}
+\bfheading{3. Your repository}
+\footnotesize
+\begin{itemize}
+\item We used someone else's repo for beginning users, but usually \textcolor{red}{you create your own repo from scratch}
+\item Create a ``new repository'' on your GitHub account
+\item Create a RStudio Project with that new URL of yours
+\item Throw in files into your local repo: push, pull, diff!
 \end{itemize}
 \end{column}
 \end{columns}
@@ -376,7 +423,7 @@ $\leadsto$ Rely on the usual Dropbox / Google Drive / Dataverse / Cloud Servers 
 are linked carbon copies you make of \emph{other people's} repositories.\\
 
 
-\small 
+\small
 \begin{itemize}
 \item If a repo is a public, you can always fork it without permission
 \item Even though your fork is ``linked'', they are different repos now: To synch, you need to explicitly pull.
@@ -431,15 +478,15 @@ is the general term for copying a remote repo down to your local.\\
 \smallskip
 
 \begin{wideenumerate}
-\item Create and work with a (private) repo on your own 
-\item Follow git tutorials
+\item Create and work with a (private) repo on your own
+\item Learn some git with command-line (instead of relying solely on a client) through git tutorials
 \item Start sharing and contributing
 \end{wideenumerate}
 
 \end{column}
 \begin{column}{0.5\textwidth}
 \bfheading{Thanks}
-Inspirations and most infographics from 
+Inspirations and most infographics from
 
 \begin{itemize}
 \item The Harvard Psychology Methods Dinner
