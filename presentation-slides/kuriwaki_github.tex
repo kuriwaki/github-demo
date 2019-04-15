@@ -54,7 +54,7 @@
 \bigskip
 \begin{wideitemize}
 \item I do some software development,
-\item but most of my work is applied (``substantive'')
+\item but most of my work is applied data analysis
 \end{wideitemize}
 \end{column}\pause
 \begin{column}{0.6\textwidth}
@@ -127,8 +127,8 @@ and alternatives have attractive features too:
 \item \textcolor{gray}{``Version control is \emph{only} useful for collaborative projects''}
 \begin{wideitemize}
 \item[{}] $\leadsto$ \pause No, in fact we (Bryan's book) recommend putting your \textcolor{red}{solo work} under version control,
-\item[{}] then move on to more complicated collaborations. 
-\item[{}] {(That's how I'll organize the rest of these slides)}
+\item[{}] then move on to more complicated collaborations.
+\item[{}] {(The organization for the rest of these slides)}
 \end{wideitemize}
 \end{wideenumerate}
 \end{column}
@@ -138,7 +138,7 @@ and alternatives have attractive features too:
 
 \section{Version Control with Yourself (and Your Past Selves)}
 
-\begin{frame}{Terminology I  - and recommended setup}
+\begin{frame}{Terminology 1 of 4  - and recommended setup}
 \begin{columns}[T]
 \begin{column}{0.65\textwidth}
 \begin{wideitemize}
@@ -146,7 +146,7 @@ and alternatives have attractive features too:
 \item<2-> \alert{Git} is a particular type of software for version control \textcolor{gray}{(Subversion, or SVN, is an alternative)}
 \item<3-> \alert{GitHub} is an app (acquired by Microsoft) to host git on the web \textcolor{gray}{(Bitbucket and GitLab are alternatives)}
 \item<4-> A \alert{desktop client} is an app that connects a webhost like Github to your computer and facilitates tasks otherwise done by \alert{command-line} \textcolor{gray}{(here I use \alert{RStudio}; Github Desktop is an alternative)}
-\item<5-> A \alert{repository} is the fundamental unit of a version control project. It's just a regular project folder with a (hidden) subfolder named \code{.git} added to it. \textcolor{gray}{( That \code{.git} contains the entirety of the project's versions)}  
+\item<5-> A \alert{repository} is the fundamental unit of a version control project. It's just a regular project folder with a (hidden) subfolder named \code{.git} added to it. \textcolor{gray}{( That \code{.git} contains the entirety of the project's versions)}
 \end{wideitemize}
 \end{column}
 \begin{column}{0.35\textwidth}
@@ -242,7 +242,7 @@ As a researcher or lab group, \textcolor{red}{creating your own package} for int
 \end{columns}
 \end{frame}
 
-\begin{frame}{Terminology II: Pushing commits}
+\begin{frame}{Terminology 2 of 4: Pushing commits}
 \begin{columns}[T]
 \begin{column}{0.55\textwidth}
 \begin{wideitemize}
@@ -259,7 +259,7 @@ As a researcher or lab group, \textcolor{red}{creating your own package} for int
 \end{frame}
 
 
-\begin{frame}{Terminology III: local and remote, push and pull}
+\begin{frame}{Terminology 3 of 4: local and remote, push and pull}
 \begin{columns}
 \begin{column}{0.5\textwidth}
 \begin{wideitemize}
@@ -291,7 +291,7 @@ As a researcher or lab group, \textcolor{red}{creating your own package} for int
 
   \bfheading{Therefore, requires a switch to working with}\pause
 
- {\small Markdown (\code{.md}) and TeX (\code{.tex}) for writing,  \pause code (\code{.R}, \code{.py})-centered output, small datasets in \code{.csv} or \code{.txt}, \pause interweavers  like \code{.Rmd}.} 
+ {\small Markdown (\code{.md}) and TeX (\code{.tex}) for writing,  \pause code (\code{.R}, \code{.py})-centered output, small datasets in \code{.csv} or \code{.txt}, \pause interweavers  like \code{.Rmd}.}
 
 \bigskip
  {\footnotesize \emph{Kieran Healy, \href{https://kieranhealy.org/publications/plain-person-text/}{``The Plain Person’s Guide to Plain Text Social Science.''}}}
@@ -371,7 +371,7 @@ $\leadsto$ Rely on the usual Dropbox / Google Drive / Dataverse / Cloud Servers 
 \begin{itemize}
 \item Familiarize yourself with \url{https://github.com/fivethirtyeight/guns-data}.
 \item From RStudio, create a New RStudio Project with Version Control $>$ Git $>$ Provide the URL
-\item Make a change in Michael Casselman's code. 
+\item Make a change in Michael Casselman's code.
 \item $\rightarrow$ commit with the Git pane on the top-right.
 \item Try ``pushing'' it: It \textcolor{red}{won't} work, because \code{fivethirtyeight/guns} is not \emph{your} remote repo. (the local repo is yours)
 \end{itemize}
@@ -382,7 +382,7 @@ $\leadsto$ Rely on the usual Dropbox / Google Drive / Dataverse / Cloud Servers 
 \begin{itemize}
   \item Visit \url{https://github.com/fivethirtyeight/guns-data} again but now click ``Fork''
   \item Verify that it leads you to \emph{your} GitHub account. Otherwise the same.
-  \item Creating another RStudio Project with the new URL. 
+  \item Creating another RStudio Project with the new URL.
   \item Try the same change in Casselman's code, commit, then push
   \item This \textcolor{red}{will} work, because the remote is yours
 \end{itemize}
@@ -400,9 +400,9 @@ $\leadsto$ Rely on the usual Dropbox / Google Drive / Dataverse / Cloud Servers 
 \end{columns}
 \end{frame}
 
-\begin{frame}{Terminology IV: Parallel version control, a.k.a branching}
+\begin{frame}{Terminology 4 of 4: Parallel version control, a.k.a branching}
 \begin{columns}[T]
-\begin{column}{0.5\textwidth}
+\begin{column}{0.45\textwidth}
 \bfheading{Branches \textnormal{are parallel universes of your own repository}}
 
 \centering
@@ -418,15 +418,16 @@ $\leadsto$ Rely on the usual Dropbox / Google Drive / Dataverse / Cloud Servers 
 \end{column}
 
 
-\begin{column}{0.25\textwidth}
+\begin{column}{0.3\textwidth}
 \bfheading{Forks}
 are linked carbon copies you make of \emph{other people's} repositories.\\
 
 
 \small
 \begin{itemize}
-\item If a repo is a public, you can always fork it without permission
-\item Even though your fork is ``linked'', they are different repos now: To synch, you need to explicitly pull.
+\item You can fork a public repo without permission
+\item Even though your fork is ``linked'', they are different repos: To synch, you need to \alert{pull}.
+\item General rule: first \alert{pull}, \emph{then} make changes and finally \alert{push}.
 \end{itemize}
 
 
@@ -446,23 +447,6 @@ is the general term for copying a remote repo down to your local.\\
 \end{columns}
 \end{frame}
 
-% \begin{frame}{Github is aspirational}
-% \begin{columns}[T]
-% \begin{column}{0.5\textwidth}
-% \end{column}
-% \begin{column}{0.5\textwidth}
-% \end{column}
-% \end{columns}
-% \end{frame}
-
-% \begin{frame}{Frame}
-% \begin{columns}[T]
-% \begin{column}{0.5\textwidth}
-% \end{column}
-% \begin{column}{0.5\textwidth}
-% \end{column}
-% \end{columns}
-% \end{frame}
 
 
 \begin{frame}{What's Next}
