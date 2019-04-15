@@ -21,7 +21,7 @@
 \item[-] \textcolor{gray}{\footnotesize Pick a professional, short username; it's hard to change later. More tips at Chapter 4.1 of happygitwithr,  \url{https://happygitwithr.com/github-acct.html\#username-advice}}
 \end{wideitemize}
 \item Make sure you have a recent version (v1.1 or later) of RStudio \url{https://www.rstudio.com/products/rstudio/download/\#download}
-\item Download these slides via: \url{https://bit.ly/2XHXyl1}.
+\item Download these slides via the repository: \url{https://bit.ly/2XHXyl1}.
 \end{wideenumerate}
 \end{column}
 \begin{column}{0.4\textwidth}
@@ -171,7 +171,7 @@ and alternatives have attractive features too:
 
 \begin{frame}{Benefit 1: Keep track of how your results changed}
 \begin{columns}[T]
-\begin{column}{0.18\textwidth}
+\begin{column}{0.2\textwidth}
 \only<1>{
 \itheading{Problem:  You tweak a regression specification and re-run your script, re-writing dozens of tables.}
 How much did your results change?
@@ -182,7 +182,7 @@ How much did your results change?
  }
 
 \end{column}
-\begin{column}{0.82\textwidth}
+\begin{column}{0.8\textwidth}
 \only<1>{
 \includegraphics[width = \linewidth]{regression-diff-1.png}
 ...
@@ -234,10 +234,10 @@ As a researcher or lab group, \textcolor{red}{creating your own package} for int
 }
 \end{column}
 \begin{column}{0.6\textwidth}
-\only<1> {\includegraphics[width = \linewidth]{website-pages.png}}
-\only<2> {\includegraphics[width = 0.7\linewidth]{prefresher-book.png}}
-\only<3> {\includegraphics[width = \linewidth]{prefresher-network.png}}
-\only<4> {\includegraphics[width = 0.7\linewidth]{file-issues.png}}
+\only<1|handout:1> {\includegraphics[width = \linewidth]{website-pages.png}}
+\only<2|handout:2> {\includegraphics[width = 0.7\linewidth]{prefresher-book.png}}
+\only<3|handout:3> {\includegraphics[width = \linewidth]{prefresher-network.png}}
+\only<4|handout:4> {\includegraphics[width = 0.7\linewidth]{file-issues.png}}
 \end{column}
 \end{columns}
 \end{frame}
@@ -323,9 +323,9 @@ $\leadsto$ Rely on the usual Dropbox / Google Drive / Dataverse / Cloud Servers 
 \end{column}
 \begin{column}{0.6\textwidth}
 \begin{overprint}
-\onslide<1>\includegraphics[width = \linewidth]{software-dev-diff.png}
-\onslide<2>\includegraphics[width = \linewidth]{long-diff-2.png}
-\onslide<3>\includegraphics[width = \linewidth]{googledoc-diff.png}
+\onslide<1|handout:1>\includegraphics[width = \linewidth]{software-dev-diff.png}
+\onslide<2|handout:2>\includegraphics[width = \linewidth]{long-diff-2.png}
+\onslide<3|handout:3>\includegraphics[width = \linewidth]{googledoc-diff.png}
 \end{overprint}
 \end{column}
 \end{columns}
@@ -336,12 +336,12 @@ $\leadsto$ Rely on the usual Dropbox / Google Drive / Dataverse / Cloud Servers 
 \begin{columns}[T]
 \begin{column}{0.4\textwidth}
 \begin{overprint}
-\onslide<1>\includegraphics[width=\linewidth]{spoof-0.png}
-\onslide<2->\includegraphics[width=\linewidth]{spoof-1.png}
+\onslide<1|handout:1>\includegraphics[width=\linewidth]{spoof-0.png}
+\onslide<2-|handout:2->\includegraphics[width=\linewidth]{spoof-1.png}
 \end{overprint}
 \end{column}
 \begin{column}{0.5\textwidth}
-\onslide<3>\includegraphics[width=\linewidth]{git-and-github-workflow.png}
+\onslide<3|handout:3>\includegraphics[width=\linewidth]{git-and-github-workflow.png}
 \end{column}
 \end{columns}
 
@@ -486,7 +486,5 @@ Questions / requests for more walkthroughs: \url{kuriwaki@g.harvard.edu}
 
 \end{frame}
 
-
-\end{frame}
 
 \end{document}
