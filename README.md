@@ -1,19 +1,21 @@
 git for social science students (not software developers)
 ================
 
-## About
+## About this repo
 
 This repository was made for slides to introduce Git and Github prepared
 for a workshop of graduate students at the *Harvard Psychology
 Department Methods Dinner* .
 
-  - Jump to the [compiled
-    slides](https://github.com/kuriwaki/github-demo/blob/master/presentation-slides/kuriwaki_github.pdf)
+  - Jump to the compiled slides in [handout
+    mode](https://github.com/kuriwaki/github-demo/blob/master/presentation-slides/kuriwaki_github_handout.pdf)
+    for printing, or in [presentation
+    mode](https://github.com/kuriwaki/github-demo/blob/master/presentation-slides/kuriwaki_github.pdf)
     (in the presentation-slides folder).
   - There’s not writeup (yet), so the slides are on the wordier side.
   - Any suggestions are very much appreciated.
 
-## Outline
+## About the tutorial
 
   - Text: <https://happygitwithr.com/>
   - Variety of Git: Use Github via the Rstudio project
